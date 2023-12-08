@@ -28,8 +28,7 @@
 struct fmt
 {
 	char fmt;
-	int (*fn)(va_list, char{}, int, int, int, int);
-
+	int (*fn)(va_list, char, int, int, int, int);
 };
 
 /**
@@ -47,17 +46,17 @@ va_list list, char buffer[], int flags, int width, int precision, int size);
 /****************** FUNCTIONS ******************/
 
 /* Funtions to print chars and strings */
-int print_char(va_list types, char buffer[],
+int hav_printed_char(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_string(va_list types, char buffer[],
+int to_print_string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_percent(va_list types, char buffer[],
+int is_print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Functions to print numbers */
-int print_int(va_list types, char buffer[],
+int the_print_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_binary(va_list types, char buffer[],
+int my_print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -75,11 +74,11 @@ char buffer[], int flags, char flag_ch, int width, int precision, int size);
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* Funcion to print memory address */
+/* Function to print memory address */
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* Funciotns to handle other specifiers */
+/* Function to handle other specifiers */
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
@@ -108,7 +107,7 @@ char buffer[],
 	int flags, int width, int precision, int size);
 
 /****************** UTILS ******************/
-int is_printable(char);
+int to_print(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
 
