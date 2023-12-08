@@ -64,6 +64,7 @@ int hi_print_pointer(va_list types, char buffer[],
  * Return: Number of characters are printed
  */
 int wi_print_non_printable(va_list types, char buffer[],
+
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
@@ -79,7 +80,8 @@ int wi_print_non_printable(va_list types, char buffer[],
 
 	while (str[i] != '\0')
 	{
-		if (is_printable(str[i]))
+		if (non_printable(str[i]))
+
 			buffer[i + offset] = str[i];
 		else
 			offset += append_hexa_code(str[i], buffer, i + offset);

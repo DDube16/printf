@@ -84,7 +84,7 @@ int to_print_string(va_list types, char buffer[],
  * @size: Size
  * Return: No. of characters are printed
  */
-int print_percent(va_list types, char buffer[],
+int is_print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	UNUSED(types);
